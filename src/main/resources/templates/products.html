@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Banking Products</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />	
+	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body>
+
+    <h1>Banking Products</h1>
+
+    <table class="table">
+      <tr>
+        <th>Product</th>
+        <th>Description</th>
+        <th>Details</th>
+      </tr>
+      <tr th:each="prod : ${prods}">
+        <td th:text="${prod.name}">Checking</td>
+        <td th:text="${prod.description}">Open your free checking account today</td>
+        <td><a href="details.html" th:href="@{/products/{id}/details(id=${prod.id})}">Details</a></td>
+      </tr>
+    </table>
+
+  </body>
+
+</html>
