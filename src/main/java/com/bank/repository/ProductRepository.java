@@ -1,4 +1,4 @@
-package com.bank;
+package com.bank.repository;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
+
+import com.bank.domain.Product;
 
 @Repository
 public class ProductRepository {

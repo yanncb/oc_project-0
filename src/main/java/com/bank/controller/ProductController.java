@@ -1,6 +1,4 @@
-package com.bank;
-
-import java.util.List;
+package com.bank.controller;
 
 import javax.inject.Inject;
 
@@ -8,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import com.bank.service.ProductService;
 
 
 @Controller

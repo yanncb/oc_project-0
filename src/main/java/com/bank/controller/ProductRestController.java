@@ -1,4 +1,4 @@
-package com.bank;
+package com.bank.controller;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.bank.domain.Product;
+import com.bank.service.ProductService;
 
 
 @RestController
