@@ -1,12 +1,12 @@
-package com.bank;
+package com.lambazon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootBankApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootBankApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

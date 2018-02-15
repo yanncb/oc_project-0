@@ -1,4 +1,4 @@
-package com.bank.service;
+package com.lambazon.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.bank.domain.Product;
-import com.bank.repository.ProductRepository;
+import com.lambazon.domain.Product;
+import com.lambazon.repository.ProductRepository;
 
 @Service
 public class ProductService {

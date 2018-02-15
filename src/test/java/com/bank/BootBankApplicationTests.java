@@ -30,20 +30,22 @@ public class BootBankApplicationTests {
 	@Test
 	public void request_detail() {
 		String body = restTemplate.getForObject("/products/1/details", String.class);
-		assertThat(body).contains("1.05");
+		assertThat(body).contains("0.05");
 	}
 	
 	@Test
 	public void request_list_as_json_and_convert_to_list() {
-		String body = restTemplate.getForObject("/products.json", String.class);
+		String body = restTemplate.getForObject("/api/products", String.class);
 		GsonJsonParser parser = new GsonJsonParser();
 		List<Object> products = parser.parseList(body);
+		
+		// project-0 modification will break this assertion!
 		assertThat(products.size()).isEqualTo(4);
 	}
 	
 	@Test
 	public void request_product_as_json_and_convert_to_list() {
-		String body = restTemplate.getForObject("/products/{id}/details.json", String.class, 1);
+		String body = restTemplate.getForObject("/api/products/{id}/details", String.class, 1);
 		GsonJsonParser parser = new GsonJsonParser();
 		List<Object> products = parser.parseList("[" + body + "]");
 		assertThat(products.size()).isEqualTo(1);

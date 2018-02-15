@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Banking Products</title>
+    <title>Product</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 		
@@ -11,24 +11,31 @@
 
   <body>
 
-    <h1>Banking Product</h1>
-  
-    <table class="table">
-      <tr>
-        <th>Product</th>
-        <th>Description</th>
-        <th>Interest Rate</th>
-      </tr>
-      <tr>
-        <td th:text="${prod.name}">Checking</td>
-        <td th:text="${prod.description}">Open your free checking account today</td>
-        <td th:text="${prod.interest}">1.25</td>
-      </tr>
-    </table>
-  
-    <p>
+    <h1>Product</h1>
+
+  <div class="container">
+  <h2>Details</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" name="name" disabled="true" th:value="${prod.name}">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" id="description" placeholder="Description" name="description" disabled="true" th:value="${prod.description}">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity" disabled="true" th:value="${prod.quantity}">
+    </div>
+   
+        <p>
       <a href="../index.html" th:href="@{/products}">Return to list</a>
     </p>
+  </form>
+</div>
+  
+
 
   </body>
 

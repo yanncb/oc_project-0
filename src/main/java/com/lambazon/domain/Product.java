@@ -1,18 +1,25 @@
-package com.bank.domain;
+package com.lambazon.domain;
 
 public class Product {
 	
-	Integer id;
-	String name, description, details;
-	double interest;
+	private Integer id;
+	private String name, description, details;
+	private int quantity;
 
-	public Product(int id, String name, String description, String details, double interest) {
+	public Product(int id, int quantity, String name, String description) {
 		super();
 		this.id=id;
+		this.quantity=quantity;
 		this.name = name;
 		this.description = description;
-		this.details = details;
-		this.interest=interest;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -39,20 +46,12 @@ public class Product {
 		this.details = details;
 	}
 
-	public Integer getId() {
-		return id;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public double getInterest() {
-		return interest;
-	}
-
-	public void setInterest(double interest) {
-		this.interest = interest;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 }

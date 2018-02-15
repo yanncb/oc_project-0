@@ -1,4 +1,4 @@
-package com.bank;
+package com.lambazon;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationAspects {
 	    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	    @Before("execution(* com.bank.controller.*.*(..))")
+	    @Before("execution(* com.lambazon.controller.*.*(..))")
 	    public void before(JoinPoint joinPoint) { 
 	        //Advice
 	        logger.info(" Check for user access ");

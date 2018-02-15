@@ -1,4 +1,4 @@
-package com.bank.controller;
+package com.lambazon.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bank.domain.Product;
-import com.bank.service.ProductService;
+import com.lambazon.domain.Product;
+import com.lambazon.service.ProductService;
 
 
 @RestController
@@ -19,12 +19,12 @@ public class ProductRestController {
 	@Inject
 	private ProductService productService;
 
-	@GetMapping("/products.json")
+	@GetMapping("/api/products")
 	public List<Product> productsAsJson (Model model) {
 		return productService.products();
 	}
 
-	@GetMapping("/products/{id}/details.json")
+	@GetMapping("/api/products/{id}/details")
 	public Product product	(@PathVariable Integer id, Model model) {
 		return productService.product(id);
 	}
