@@ -1,4 +1,4 @@
-package com.bank;
+package com.lambazon.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class BootBankApplicationTests {
+public class ControllerTests {
 	
 	@Inject
 	private TestRestTemplate restTemplate;
@@ -24,13 +24,13 @@ public class BootBankApplicationTests {
 	@Test
 	public void request_home() {
 		String body = restTemplate.getForObject("/", String.class);
-		assertThat(body).contains("Banking Products");
+		assertThat(body).contains("Products");
 	}
 
 	@Test
 	public void request_detail() {
 		String body = restTemplate.getForObject("/products/1/details", String.class);
-		assertThat(body).contains("0.05");
+		assertThat(body).contains("2nd Generation");
 	}
 	
 	@Test
@@ -40,7 +40,7 @@ public class BootBankApplicationTests {
 		List<Object> products = parser.parseList(body);
 		
 		// project-0 modification will break this assertion!
-		assertThat(products.size()).isEqualTo(4);
+		assertThat(products.size()).isEqualTo(5);
 	}
 	
 	@Test
