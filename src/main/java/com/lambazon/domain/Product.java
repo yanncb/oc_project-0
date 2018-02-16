@@ -5,11 +5,13 @@ public class Product {
 	private Integer id;
 	private String name, description, details;
 	private int quantity;
+	private double price;
 
-	public Product(int id, int quantity, String name, String description) {
+	public Product(int id, int quantity, double price, String name, String description) {
 		super();
 		this.id=id;
 		this.quantity=quantity;
+		this.setPrice(price);
 		this.name = name;
 		this.description = description;
 	}
@@ -54,4 +56,16 @@ public class Product {
 		this.quantity = quantity;
 	}
 
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public double getInventoryPrice() {
+		// TODO Auto-generated method stub
+		return 0.0;
+	}
 }
