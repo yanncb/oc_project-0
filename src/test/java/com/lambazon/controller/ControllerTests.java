@@ -14,6 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.lambazon.domain.Product;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ControllerTests {
@@ -49,5 +51,11 @@ public class ControllerTests {
 		GsonJsonParser parser = new GsonJsonParser();
 		List<Object> products = parser.parseList("[" + body + "]");
 		assertThat(products.size()).isEqualTo(1);
-	}	
+	}
+	
+	@Test
+	public void test_minimum_quantity_validation_for_product() {
+		Product p = new Product(0, 0, 0, null, null);
+		assertThat(p.getQuantity()).isEqualTo(1);
+	}
 }
