@@ -1,31 +1,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Products</title>
+    <title th:text="#{list_title}">Products</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 		
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />	
 	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+
   </head>
 
   <body>
 
-    <h1>Products</h1>
-
+    
+  <div class="container">
+  <h1 th:text="#{list_title}">Products</h1>
     <table class="table">
       <tr>
-        <th>Product</th>
-        <th>Description</th>
-        <th>Details</th>
+        <th th:text="#{product}">Product</th>
+        <th th:text="#{description}">Description</th>
+        <th th:text="#{details}">Details</th>
       </tr>
       <tr th:each="prod : ${prods}">
         <td th:text="${prod.name}">Name</td>
         <td th:text="${prod.description}">Description</td>
-        <td><a href="details.html" th:href="@{/products/{id}/details(id=${prod.id})}">Details</a></td>
+        <td><a href="details.html" th:href="@{/products/{id}/details(id=${prod.id})}" th:text="#{id} + ${prod.id}">Details</a></td>
       </tr>
     </table>
-
+</div>
   </body>
 
 </html>

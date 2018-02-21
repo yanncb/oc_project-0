@@ -1,43 +1,49 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Product</title>
+    <title th:text="#{detail_title}">Product</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 		
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />	
 	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+
   </head>
 
   <body>
 
-    <h1>Product</h1>
+
 
   <div class="container">
+      <h1 th:text="#{detail_title}">Product</h1>
   <h2>Details</h2>
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Name" name="name" disabled="true" th:value="${prod.name}">
+  <form >
+  <div class="form-group">
+      <label for="identifier" th:text="#{identifier}">Identifier</label>
+      <input type="text" class="form-control" id="identifier" th:placeholder="#{identifier}" placeholder="Identifier" name="id" disabled="true" th:value="${prod.id}">
     </div>
     <div class="form-group">
-      <label for="description">Description:</label>
-      <input type="text" class="form-control" id="description" placeholder="Description" name="description" disabled="true" th:value="${prod.description}">
+      <label for="name" th:text="#{name}">Name:</label>
+      <input type="text" class="form-control" id="name" th:placeholder="#{name}" placeholder="Name" name="name" disabled="true" th:value="${prod.name}">
     </div>
     <div class="form-group">
-      <label for="quantity">Quantity:</label>
-      <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity" disabled="true" th:value="${prod.quantity}">
+      <label for="description" th:text="#{description}">Description:</label>
+      <input type="text" class="form-control" id="description" th:placeholder="#{description}" placeholder="Description" name="description" disabled="true" th:value="${prod.description}">
     </div>
     <div class="form-group">
-      <label for="price">Price:</label>
-      <input type="number" class="form-control" id="price" placeholder="Price" name="price" disabled="true" th:value="${prod.price}">
+      <label for="quantity" th:text="#{quantity}">Quantity:</label>
+      <input type="number" class="form-control" id="quantity" th:placeholder="#{quantity}" placeholder="Quantity" name="quantity" disabled="true" th:value="${prod.quantity}">
+    </div>
+    <div class="form-group">
+      <label for="price" th:text="#{price}">Price:</label>
+      <input type="number" class="form-control" id="price" th:placeholder="#{price}" placeholder="Price" name="price" disabled="true" th:value="${prod.price}">
     </div> 
     <div class="form-group">
-      <label for="inventoryPrice">Total Inventory Price:</label>
-      <input type="number" class="form-control" id="inventoryPrice" placeholder="InventoryPrice" name="inventoryPrice" disabled="true" th:value="${prod.InventoryPrice}">
+      <label for="inventoryPrice" th:text="#{inventory_price}">Total Inventory Price:</label>
+      <input type="number" class="form-control" id="inventoryPrice" th:placeholder="#{inventory_price}" placeholder="InventoryPrice" name="inventoryPrice" disabled="true" th:value="${prod.InventoryPrice}">
     </div>  
         <p>
-      <a href="../index.html" th:href="@{/products}">Return to list</a>
+      <a href="../index.html" th:href="@{/products}" th:text="#{return_to_list}">Return to list</a>
     </p>
   </form>
 </div>
