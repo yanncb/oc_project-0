@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.print.attribute.standard.PDLOverrideSupported;
+
 import org.springframework.stereotype.Repository;
 
 import com.lambazon.domain.Product;
@@ -13,11 +15,9 @@ import com.lambazon.domain.Product;
 @Repository
 public class ProductRepository {
 	
-	private static Map<Integer, Product> products;
+	private static Map<Integer, Product> products = new HashMap<>();
 	
-	static {
-		
-		products = new HashMap<>();
+	private static void generateProductData() {
 		int id=0;
 		products.put(++id, new Product(id, 10, 92.50, "Echo Dot", "(2nd Generation) - Black"));
 		products.put(++id, new Product(id, 20, 9.99, "Anker 3ft / 0.9m Nylon Braided", "Tangle-Free Micro USB Cable"));
@@ -27,6 +27,11 @@ public class ProductRepository {
 	}
 	
 	public List<Product> products() {
+		
+		if (products.isEmpty()) {
+			generateProductData();
+		}
+		
 		return products.values()
 				.stream()
 				.sorted(Comparator.comparing(Product::getName))

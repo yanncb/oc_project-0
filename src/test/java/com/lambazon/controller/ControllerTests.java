@@ -56,6 +56,6 @@ public class ControllerTests {
 	@Test
 	public void test_minimum_quantity_validation_for_product() {
 		Product p = new Product(0, 0, 0, null, null);
-		assertThat(p.getQuantity()).isEqualTo(1);
+		assertThat(p.getQuantity()).isEqualTo(0);
 	}
 }
