@@ -8,12 +8,11 @@ public class Product {
 	private double price;
 
 	public Product(int id, int quantity, double price, String name, String description) {
-		super();
-		this.id=id;
-		this.quantity=quantity;
-		this.setPrice(price);
-		this.name = name;
-		this.description = description;
+		setId(id);
+		setQuantity(quantity);
+		setPrice(price);
+		setName(name);
+		setDescription(description);
 	}
 
 	public Integer getId() {
