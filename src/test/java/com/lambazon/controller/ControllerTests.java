@@ -16,6 +16,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.lambazon.domain.Product;
 
+
+/**
+ * 
+ * @author stanlick
+ *
+ *   This class will demonstrate Integration Testing once learner has advanced to the TDD phase of the Java EE learning path
+ */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ControllerTests {
