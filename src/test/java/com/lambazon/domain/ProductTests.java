@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.lambazon.domain.Product;
 
 
-public class DomainTests {
+public class ProductTests {
 	
 //	@Test
 //	public void test_minimum_quantity_validation_for_product() {
