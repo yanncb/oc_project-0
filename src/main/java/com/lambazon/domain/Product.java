@@ -69,8 +69,19 @@ public class Product {
         return price;
     }
 
+    /**
+     * In case of negative price or zero writing zero and if the price is greater than 1000 writing 1000.
+     *
+     * @param price price of product.
+     */
     public void setPrice(double price) {
-        this.price = price;
+        if (price <= 0) {
+            this.price = 0;
+        } else if (price >= 1000) {
+            this.price = 1000;
+        } else {
+            this.price = price;
+        }
     }
 
     /**
